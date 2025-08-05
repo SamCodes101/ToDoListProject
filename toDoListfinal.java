@@ -7,6 +7,8 @@ public class toDoListfinal{
         Boolean loop = true;
         Scanner input = new Scanner(System.in);
         List<String> toDo = new ArrayList<>();
+
+        System.out.println("Uploaded to GitHub!");
         
         while (loop){
             //1st
