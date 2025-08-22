@@ -8,7 +8,6 @@ public class toDoListfinal{
         Scanner input = new Scanner(System.in);
         List<String> toDo = new ArrayList<>();
 
-        System.out.println("Uploaded to GitHub!");
         
         while (loop){
             //1st
@@ -20,49 +19,72 @@ public class toDoListfinal{
 
             System.out.println("Do you wish to modify anything? ");
             String answer2 = input.nextLine();
-            if (answer2.equalsIgnoreCase("yes")){
+            if (answer2.toLowerCase().contains("yes")){
                 System.out.println("Which task do you wish to modify? ");
                 String answer3 = input.nextLine();
                 
                 //detect modify in list
 
                 for (String item : toDo) {
-                if (item.toLowerCase().contains(answer3)) {
-                    System.out.println("Found: " + answer3);
-                    toDo.remove(answer3);
+                    if (item.toLowerCase().contains(answer3)) {
+                        System.out.println("Found: " + item);
+
+                        //replace in list
+
+                        toDo.remove(item);
+                        System.out.println("What task do you wish to replace it with? ");
+                        String answer4 = input.nextLine();
+                        toDo.add(answer4);
+                    
+                        System.out.println(toDo);
+                    }
+
+
+                    
+                    else{
+                        System.out.println("error");
+                    }
+                }
+            }
+            
+            else if (answer2.toLowerCase().contains("no") || answer2.toLowerCase().contains("yes")) {
+            //delete?
+
+                System.out.println("Do you wish to delete a task? ");
+                String answer5 = input.nextLine();
+                
+                if (answer5.toLowerCase().contains("yes")){
+                    System.out.println("Which task do you wish to erase? ");
+                    String answer6 = input.nextLine();
+
+                    //detect for remove
+
+                    for (String item : toDo) {
+                        if (item.toLowerCase().contains(answer6)) {
+                            System.out.println("Found: " + item);
+                        }
+
+                        else{
+                            System.out.println("error");
+                        }
+                    
+                    }
+                    toDo.remove(answer6);
+                    System.out.println(toDo);
                 }
 
+                else if (answer5.toLowerCase().contains("no")){
+                    System.out.println("");
+                }
                 else{
                     System.out.println("error");
                 }
-                }
-
-                System.out.println("What task do you wish to replace it with? ");
-                String answer4 = input.nextLine();
-
-                //detect replace in list
-
-                for (String item : toDo) {
-                if (item.toLowerCase().contains(answer4)) {
-                    System.out.println("Found: " + answer4);
-                    toDo.add(answer4);
-                }
-
-                else{
-                    System.out.println("error");
-                }
-                }
-
-
-                System.out.println(toDo);
             }
 
             else{
-                System.exit(0);
+                System.out.println("error");
             }
-        }
 
-
-    }
+            }
+        } 
 }
-
