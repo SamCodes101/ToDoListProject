@@ -11,6 +11,7 @@ public class toDoListfinal{
         
         while (loop){
             //1st
+            System.out.println("");
             System.out.println("Add a task: ");
             String answer1 = input.nextLine();
             toDo.add(answer1);
@@ -37,22 +38,23 @@ public class toDoListfinal{
                         toDo.add(answer4);
                     
                         System.out.println(toDo);
+                        break;
+                        
                     }
-
-
-                    
                     else{
                         System.out.println("error");
+                        
                     }
                 }
             }
             
-            else if (answer2.toLowerCase().contains("no") || answer2.toLowerCase().contains("yes")) {
+            if (answer2.toLowerCase().contains("no") || answer2.toLowerCase().contains("yes")) {
             //delete?
 
                 System.out.println("Do you wish to delete a task? ");
                 String answer5 = input.nextLine();
-                
+            
+             
                 if (answer5.toLowerCase().contains("yes")){
                     System.out.println("Which task do you wish to erase? ");
                     String answer6 = input.nextLine();
@@ -62,29 +64,37 @@ public class toDoListfinal{
                     for (String item : toDo) {
                         if (item.toLowerCase().contains(answer6)) {
                             System.out.println("Found: " + item);
+                            toDo.remove(item);
+
+                            System.out.println(toDo);
+                            break;
+                            
                         }
 
                         else{
                             System.out.println("error");
-                        }
-                    
-                    }
-                    toDo.remove(answer6);
-                    System.out.println(toDo);
+                        }  
+                    }  
                 }
+
+                //if no
 
                 else if (answer5.toLowerCase().contains("no")){
                     System.out.println("");
                 }
+
+                //if other
+
                 else{
                     System.out.println("error");
                 }
             }
 
+            //if other
+
             else{
                 System.out.println("error");
             }
-
             }
         } 
 }
