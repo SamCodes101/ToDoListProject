@@ -39,11 +39,6 @@ public class toDoListfinal{
                     
                         System.out.println(toDo);
                         break;
-                        
-                    }
-                    else{
-                        System.out.println("error");
-                        
                     }
                 }
             }
@@ -53,7 +48,6 @@ public class toDoListfinal{
 
                 System.out.println("Do you wish to delete a task? ");
                 String answer5 = input.nextLine();
-            
              
                 if (answer5.toLowerCase().contains("yes")){
                     System.out.println("Which task do you wish to erase? ");
@@ -67,13 +61,9 @@ public class toDoListfinal{
                             toDo.remove(item);
 
                             System.out.println(toDo);
-                            break;
                             
+                            break;
                         }
-
-                        else{
-                            System.out.println("error");
-                        }  
                     }  
                 }
 
@@ -95,6 +85,7 @@ public class toDoListfinal{
             else{
                 System.out.println("error");
             }
-            }
-        } 
+        }
+        input.close();
+    }
 }
